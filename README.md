@@ -1,5 +1,3 @@
-# tic-tac-toe
-game in python
 # --------- Global Variables -----------
 
 # Will hold our game board data
@@ -21,7 +19,8 @@ current_player = "X"
 
 # Play a game of tic tac toe
 def play_game():
-# Show the initial game board
+
+  # Show the initial game board
   display_board()
 
   # Loop until the game stops (winner or tie)
@@ -40,9 +39,7 @@ def play_game():
   if winner == "X" or winner == "O":
     print(winner + " won.")
   elif winner == None:
-  print("Tie.")
-
-
+    print("Tie.")
 # Display the game board to the screen
 def display_board():
   print("\n")
@@ -50,14 +47,15 @@ def display_board():
   print(board[3] + " | " + board[4] + " | " + board[5] + "     4 | 5 | 6")
   print(board[6] + " | " + board[7] + " | " + board[8] + "     7 | 8 | 9")
   print("\n")
-  # Handle a turn for an arbitrary player
+
+
+# Handle a turn for an arbitrary player
 def handle_turn(player):
 
   # Get position from player
   print(player + "'s turn.")
   position = input("Choose a position from 1-9: ")
-
-  # Whatever the user inputs, make sure it is a valid input, and the spot is open
+# Whatever the user inputs, make sure it is a valid input, and the spot is open
   valid = False
   while not valid:
 
@@ -73,8 +71,7 @@ def handle_turn(player):
       valid = True
     else:
       print("You can't go there. Go again.")
-
-  # Put the game piece on the board
+       # Put the game piece on the board
   board[position] = player
 
   # Show the game board
@@ -97,6 +94,8 @@ def check_for_winner():
   diagonal_winner = check_diagonals()
   # Get the winner
   if row_winner:
+  
+    
     winner = row_winner
   elif column_winner:
     winner = column_winner
@@ -117,7 +116,7 @@ def check_rows():
   # If any row does have a match, flag that there is a win
   if row_1 or row_2 or row_3:
     game_still_going = False
-  # Return the winner
+    # Return the winner
   if row_1:
     return board[0] 
   elif row_2:
